@@ -1,18 +1,37 @@
+<!--This is 150% of 30% of my available time - just imagine 150% of 100% of my time : )-->
+<!DOCTYPE html>
 <html>
 	<head>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        console.log("working?");
+     	for (var i = 0; i < window.geemails.length; i++) {
+        	console.log(window.geemails[i].date); 
+        	console.log(window.geemails[i].subject);
+        	console.log(window.geemails[i].sender);
+        	console.log(window.geemails[i].body);
+        	$('#email').append('<p class="email">' + window.geemails[i].date + '</p>')
+        	$('#email').append('<p class="email">' + window.geemails[i].subject + '</p>')
+        	$('#email').append('<p class="email">' + window.geemails[i].sender + '</p>')
+        	$('#email').append('<p class="email">' + window.geemails[i].body + '</p>')
+    	}
       };
     </script>
+    <title>GeeMail</title>
 	</head>
 	<body>
-		<div class="container" id="main">
-			Build Me!
+		<div id="header">
+			<p>Gee-Mail</p>
 		</div>
+			<div id="sidebar">
+				<ul>
+					<p><a href="#">Inbox (###)</a></p>
+					<p><a href="#">Sent</a></p>
+					<p><a href="#">Trash</a></p>
+				</ul>
+			</div>
+			<div id="email"></div>
 	</body>
 </html>
