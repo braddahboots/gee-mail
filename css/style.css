@@ -27,7 +27,7 @@ div {
 	height: 200px;
 	background-color: #ffffff;
 	margin-top: 40px;
-	margin-right: 0px;
+
 	margin-left: 0px;
 	margin-bottom: 5px;
 }
@@ -41,19 +41,22 @@ ul li a:hover {
 	color: #fff;
 	background:#939393;
 }
-#email {
+#message {
 	position:relative;
 	float:left;
 	border: 1px solid black;
-	height: 2000px;
 	width: 80%;
-	background-color: green;
+	background-color: #F0FFFF;
 	margin-top: 40px;
 	margin-left: 10px;
 	margin-bottom: 5px;
 	margin-right: 0px;
 }
-.email {
-	background-color: gray;
-	border: 1px dashed black;
+#date {
+  color: #222;
+  background: gray;
+  border-spacing: 2px;
+  border-color: gray;
+  font-family: arial,sans-serif;
+  border-bottom: 1px #e5e5e5 solid;
 }

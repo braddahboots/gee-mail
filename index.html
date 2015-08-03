@@ -1,5 +1,6 @@
 <!--This is 150% of 30% of my available time - just imagine 150% of 100% of my time : )-->
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -7,16 +8,52 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
-     	for (var i = 0; i < window.geemails.length; i++) {
-        	console.log(window.geemails[i].date); 
-        	console.log(window.geemails[i].subject);
-        	console.log(window.geemails[i].sender);
-        	console.log(window.geemails[i].body);
-        	$('#email').append('<p class="email">' + window.geemails[i].date + '</p>')
-        	$('#email').append('<p class="email">' + window.geemails[i].subject + '</p>')
-        	$('#email').append('<p class="email">' + window.geemails[i].sender + '</p>')
-        	$('#email').append('<p class="email">' + window.geemails[i].body + '</p>')
-    	}
+
+		function displayEmail() {
+	     	var message = document.getElementById('message');
+
+	     	var date = document.createElement('div');
+	     	date.id = "date";
+	     	date.innerHTML = (window.geemails[i].date);
+	     	message.appendChild(date);
+
+	     	var subject = document.createElement('div');
+	     	subject.id = "subject";
+	     	subject.innerHTML = window.geemails[i].subject;
+	     	message.appendChild(subject);
+
+	     	var sender = document.createElement('div');
+	     	sender.id = "sender";
+	     	sender.innerHTML = window.geemails[i].sender;
+	     	message.appendChild(sender);
+
+	     	var body = document.createElement('div');
+	     	body.id = "subject";
+	     	body.innerHTML = window.geemails[i].body;
+	     	message.appendChild(body); 
+	     	};
+	    
+	    var sidebar  = document.getElementById('sidebar');
+
+		var inbox = document.createElement('inbox');
+			inbox.id = "Inbox";
+			inbox.innerHTML = window.geemails.length + displayEmail.length;
+		function count() {
+			return window.geemails.length + displayEmail.length;
+		}
+
+	     for (var i = 0; i < window.geemails.length; i++) {
+	     	displayEmail(window.geemails[i]);
+    	};
+    	var main = function (){
+    		$('message').click(function(){
+    			$('sender').hide();
+    			$('body').hide();
+    		$(this).children('sender').show();
+    		$(this).children('body').show();
+    		});
+    	};
+    	$(document).ready(main);
       };
     </script>
     <title>GeeMail</title>
@@ -27,11 +64,16 @@
 		</div>
 			<div id="sidebar">
 				<ul>
-					<p><a href="#">Inbox (###)</a></p>
+					<p><a href="#" class="inbox">Inbox</a></p>
 					<p><a href="#">Sent</a></p>
 					<p><a href="#">Trash</a></p>
 				</ul>
 			</div>
-			<div id="email"></div>
+			<div id="message">
+                <div id="date"></div>
+                <div id="subject"></div>
+                <div id="sender"></div>
+                <div id="body"></div>         
+            </div>
 	</body>
 </html>
