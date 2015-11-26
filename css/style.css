@@ -2,34 +2,30 @@ div {
 	border-radius:2px;
 }
 #header {
-	z-index:1;
-	position: fixed;
+/*	position: fixed;*/
 	border: 1px solid black;
 	width: 90%;
-	height: 40px;
+	height: 5%;
 	background-color: gray;
-	margin-top: -10px;
-	margin-bottom: 10px;
+	margin: auto;
 }
-#header p {
+#header h1 {
 	padding-left: 2px;
 	padding-top: 2px;
+  margin-bottom: 2px;
 	font-size: 16px;
 	font-weight: bold;
 	font-style: Verdana;
 	color: #ffffff;
 }
 #sidebar {
-	position:relative;
-	float: left;
+	position:fixed;
 	border: 1px solid black;
-	width: 10%;
-	height: 200px;
+	width: 20%;
+	height: 15%;
 	background-color: #ffffff;
-	margin-top: 40px;
-
-	margin-left: 0px;
-	margin-bottom: 5px;
+	margin-top: 3%;
+	margin-left: 14%;
 }
 ul li a {
 		display: block;
@@ -41,22 +37,29 @@ ul li a:hover {
 	color: #fff;
 	background:#939393;
 }
-#message {
-	position:relative;
-	float:left;
-	border: 1px solid black;
-	width: 80%;
-	background-color: #F0FFFF;
-	margin-top: 40px;
-	margin-left: 10px;
-	margin-bottom: 5px;
-	margin-right: 0px;
-}
-#date {
+
+#subject {
   color: #222;
   background: gray;
   border-spacing: 2px;
   border-color: gray;
   font-family: arial,sans-serif;
   border-bottom: 1px #e5e5e5 solid;
+}
+
+#message {
+  position:relative;
+  border: 1px solid black;
+  width: 50%;
+  background-color: #F0FFFF;
+  margin-top: 3%;
+  margin-left: 35%;
+}
+
+#emails {
+  border: 1px solid black;
+}
+
+#content {
+  display: none;
 }
